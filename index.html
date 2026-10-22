@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000066">
+  <meta name="description" content="Odkryj 10 pojęć z robotyzacji i zarządzania robotami. Robotyczna wykreślanka: plansza 11 × 11, trzy kierunki i nowa zagadka w każdej grze.">
+  <title>Robotyczna wykreślanka</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=brand-20261022">
+  <script src="game.js?v=brand-20261022" defer></script>
+  <script src="app.js?v=brand-20261022" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Robotyczna wykreślanka — strona startowa">
+        <img class="brand-logo" src="assets/logo.svg" alt="PKO Bank Polski">
+        <span>Akademia Robotyzacji</span>
+      </a>
+      <button id="qr-open" class="text-button" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h6v6H3zM15 3h6v6h-6zM3 15h6v6H3zM15 15h2v2h-2zM19 19h2v2h-2zM19 13h2v3M13 19v2h3"/></svg><span>Kod QR</span></button>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="main-title">
+        <div class="hero-copy">
+          <span class="eyebrow"><span></span> AKADEMIA ROBOTYZACJI</span>
+          <h1 id="main-title">Robotyczna<br><span>wykreślanka<span class="brand-dot">.</span></span></h1>
+          <div class="red-rule"></div>
+          <p class="subtitle">Odkryj 10 pojęć z robotyzacji<br class="wide-break"> i zarządzania robotami</p>
+        </div>
+        <div class="hero-art">
+          <img class="art-logo" src="assets/logo-white.svg" alt="PKO Bank Polski">
+          <img class="art-robot" src="assets/robot.png" alt="Humanoidalny robot" draggable="false">
+        </div>
+      </section>
+
+      <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+        <div class="welcome-top"><div><span class="eyebrow">ROBOTYCZNA WYKREŚLANKA</span><h2 id="welcome-title">Masz oko do robotyzacji?</h2><p>Wśród liter ukryliśmy 10 pojęć. Odszukaj je wszystkie!</p></div></div>
+        <div class="facts" aria-label="Zasady gry">
+          <div class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18"/></svg><span><strong>11 × 11</strong><small>121 pól</small></span></div>
+          <div class="fact"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg><span><strong>10 haseł</strong><small>do odkrycia</small></span></div>
+          <div class="fact direction-fact"><span class="arrows" aria-hidden="true">→ ↓ ↘</span><span><strong>3 kierunki</strong><small>w prawo, w dół i w dół po skosie w prawo</small></span></div>
+        </div>
+        <div class="start-row"><button id="start" class="button primary" type="button">Zagraj <span aria-hidden="true">→</span></button><p>Przeciągnij po literach lub wybierz<br>pierwszą i ostatnią literę hasła.</p></div>
+      </section>
+
+      <section id="play" class="play" aria-label="Plansza gry" hidden>
+        <div class="game-layout">
+          <div class="board-card">
+            <div class="board-header"><div><span class="eyebrow">TWOJA PLANSZA</span><h2 id="board-title" tabindex="-1">Znajdź ukryte hasła</h2></div><button id="reset" class="icon-button" type="button" aria-label="Zagraj ponownie — wylosuj nową planszę" title="Zagraj ponownie"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M20 12a8 8 0 1 0-2 5M20 7v5"/></svg></button></div>
+            <p class="board-tip" id="board-help">Wybierz pierwszą i ostatnią literę lub przeciągnij: <strong>→ ↓ ↘</strong></p>
+            <div class="board-wrap"><div id="board" class="board" role="group" aria-label="Wykreślanka, 11 wierszy i 11 kolumn" aria-describedby="board-help keyboard-help"></div><svg id="highlights" class="highlights" viewBox="0 0 110 110" aria-hidden="true"></svg></div>
+            <div id="feedback" class="feedback" role="status" aria-live="polite">Pierwsze hasło czeka na odkrycie.</div>
+            <p id="keyboard-help" class="keyboard-help">Klawiatura: strzałki przenoszą fokus, Enter wybiera początek i koniec, Esc anuluje.</p>
+          </div>
+          <aside class="progress-card" aria-labelledby="progress-title">
+            <div class="progress-top"><span class="eyebrow" id="progress-title">TWÓJ POSTĘP</span><span class="tiny-dot" aria-hidden="true"></span></div>
+            <div class="counter"><strong id="count">0</strong><span>/ 10 <small>odkrytych haseł</small></span></div>
+            <div id="progress" class="progress" role="progressbar" aria-label="Odkryte hasła" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0"><span id="progress-fill"></span></div>
+            <h3>Odkryte hasła</h3>
+            <div id="empty" class="empty-state"><span aria-hidden="true">✦</span><p>Tu pojawią się pojęcia,<br>które znajdziesz na planszy.</p></div>
+            <ol id="found-list" class="found-list" aria-label="Odkryte hasła"></ol>
+            <div class="sidebar-note"><strong>Patrz w trzech kierunkach</strong><div aria-hidden="true">→ <span>↓</span> ↘</div><p>Wszystkie hasła czytasz od początku do końca, bez zawracania.</p></div>
+          </aside>
+        </div>
+        <section id="win" class="win" aria-labelledby="win-title" hidden><div class="win-icon" aria-hidden="true">✓</div><div><span class="eyebrow">MISJA WYKONANA</span><h2 id="win-title" tabindex="-1">Świetna robota!</h2><p>Wszystkie 10 pojęć odkryte. Robotyzacja nie ma przed Tobą tajemnic.</p></div><button id="again" type="button" class="button primary">Zagraj ponownie <span aria-hidden="true">↻</span></button></section>
+      </section>
+      <noscript><p class="noscript">Włącz JavaScript w przeglądarce, aby zagrać w wykreślankę.</p></noscript>
+    </main>
+    <footer><span>Robotyczna wykreślanka</span><span>10 pojęć. 3 kierunki. Twoja spostrzegawczość.</span></footer>
+  </div>
+
+  <dialog id="qr-dialog" aria-labelledby="qr-title"><button class="icon-button close" data-close="qr-dialog" type="button" aria-label="Zamknij">×</button><span class="eyebrow">ZAGRAJ NA TELEFONIE</span><h2 id="qr-title">Zeskanuj i odkrywaj</h2><img class="qr-image" src="kod-qr-brand.png" alt="Kod QR prowadzący do Robotycznej wykreślanki" width="328" height="328"><a class="button primary" href="kod-qr-brand.png" download="Robotyczna-wykreslanka-QR.png">Pobierz kod QR <span aria-hidden="true">↓</span></a><p class="dialog-note">Kod otwiera ten sam link do gry.</p></dialog>
+  <dialog id="reset-dialog" aria-labelledby="reset-title"><span class="eyebrow">NOWE WYZWANIE</span><h2 id="reset-title">Zagrać od początku?</h2><p>Wylosujemy nową planszę i wyzerujemy obecny postęp.</p><div class="dialog-actions"><button class="button secondary" data-close="reset-dialog" type="button">Graj dalej</button><button id="confirm-reset" class="button primary" type="button">Zagraj ponownie</button></div></dialog>
+</body>
+</html>
