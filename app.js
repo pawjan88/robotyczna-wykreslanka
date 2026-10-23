@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const { SIZE, WORDS, generateBoard, selectPath, checkSelection } = window.RobotGame;
+  const { SIZE, WORDS, displayWord, generateBoard, selectPath, checkSelection } = window.RobotGame;
   const $ = id => document.getElementById(id);
   const board = $('board');
   const svg = $('highlights');
@@ -66,7 +66,7 @@
       const tick = document.createElement('span');
       tick.textContent = '✓';
       tick.setAttribute('aria-hidden', 'true');
-      item.append(tick, document.createTextNode(word));
+      item.append(tick, document.createTextNode(displayWord(word)));
       $('found-list').appendChild(item);
     }
     $('win').hidden = count !== WORDS.length;
@@ -89,14 +89,14 @@
     if (result.status === 'found') {
       found.set(result.word, result.path);
       updateProgress();
-      message(`Dobra robota! ${result.word} — odkryto ${found.size} z 10 haseł.`, 'success');
+      message(`Dobra robota! ${displayWord(result.word)} — odkryto ${found.size} z 10 haseł.`, 'success');
       if (found.size === WORDS.length) {
         message('Brawo! Wszystkie 10 haseł odkryte.', 'success');
         $('win-title').focus({ preventScroll: true });
         $('win').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     } else if (result.status === 'duplicate') {
-      message(`${result.word} jest już na liście. Poszukaj kolejnego pojęcia.`);
+      message(`${displayWord(result.word)} jest już na liście. Poszukaj kolejnego pojęcia.`);
     } else if (result.status === 'invalid') {
       message('Zaznacz co najmniej dwie litery: w prawo, w dół lub po skosie w dół w prawo.', 'error');
     } else {

@@ -1,4 +1,4 @@
-# Robotyczna wykreślanka
+# Robotyczno - Agentyczna Wykreślanka
 
 Gra 11 × 11 z 10 pojęciami z robotyzacji. Działa w przeglądarce, bez serwera aplikacyjnego i bez instalacji.
 
@@ -12,7 +12,9 @@ Plik `kod-qr-brand.png` prowadzi do powyższego adresu. Zacznie prowadzić do gr
 
 ## Hasła
 
-ROBOT, PROCES, ANALIZA, ROBOTYZACJA, EFEKTYWNOŚĆ, AKADEMIA, WDROŻENIE, KONTROLA, DANE, ALGORYTM.
+ROBOT, PROCES, ROBOTYZACJA, EFEKTYWNOŚĆ, ALGORYT, Agent AI, Prompt, LLM, Asystent, AUTONOMIA.
+
+Na planszy hasła są zapisane wielkimi literami, bez spacji (Agent AI → AGENTAI).
 
 Kierunki: w prawo, w dół, po skosie w dół i w prawo.
 
