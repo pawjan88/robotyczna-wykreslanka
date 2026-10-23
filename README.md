@@ -12,7 +12,7 @@ Plik `kod-qr-brand.png` prowadzi do powyższego adresu. Zacznie prowadzić do gr
 
 ## Hasła
 
-ROBOT, PROCES, ROBOTYZACJA, EFEKTYWNOŚĆ, ALGORYT, Agent AI, Prompt, LLM, Asystent, AUTONOMIA.
+ROBOT, PROCES, ROBOTYZACJA, EFEKTYWNOŚĆ, ALGORYTM, Agent AI, Prompt, LLM, Asystent, AUTONOMIA.
 
 Na planszy hasła są zapisane wielkimi literami, bez spacji (Agent AI → AGENTAI).
 

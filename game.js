@@ -1,7 +1,7 @@
 (function (root) {
   'use strict';
   const SIZE = 11;
-  const WORD_LABELS = ['ROBOT', 'PROCES', 'ROBOTYZACJA', 'EFEKTYWNOŚĆ', 'ALGORYT', 'Agent AI', 'Prompt', 'LLM', 'Asystent', 'AUTONOMIA'];
+  const WORD_LABELS = ['ROBOT', 'PROCES', 'ROBOTYZACJA', 'EFEKTYWNOŚĆ', 'ALGORYTM', 'Agent AI', 'Prompt', 'LLM', 'Asystent', 'AUTONOMIA'];
   const WORDS = WORD_LABELS.map(word => word.toUpperCase().replace(/\s+/g, ''));
   const displayWord = word => WORD_LABELS[WORDS.indexOf(word)] || word;
   const DIRECTIONS = [[0, 1], [1, 0], [1, 1]];
