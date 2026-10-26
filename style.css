@@ -9,3 +9,7 @@
 
 /* Full supplied robot icon, without cropping the hands or feet. */
 .hero .art-robot,.playing .hero .art-robot{width:100%;height:94%;left:0;object-fit:contain;object-position:center bottom}
+
+/* Robot on the left and agent on the right, both on the shared light background. */
+.hero-art,.playing .hero-art{background:none;border-radius:0;overflow:visible}
+@media(max-width:700px){.hero-art,.playing .hero-art{grid-column:1}.agent-art,.playing .agent-art{grid-column:2}}
